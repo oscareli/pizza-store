@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PizzaStore.ApplicationCore.Interfaces.Services;
 using PizzaStore.Infrastructure.Data;
+using PizzaStore.Infrastructure.Repositories;
 
 namespace PizaaStore.UI.API
 {
@@ -28,6 +30,9 @@ namespace PizaaStore.UI.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<IPizzaOrderRepository, PizzaOrderRepository>();
+            services.AddScoped<IPizzaOrderService, IPizzaOrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
