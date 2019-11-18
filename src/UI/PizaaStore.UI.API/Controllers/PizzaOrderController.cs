@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using PizzaStore.ApplicationCore.Entities;
 using PizzaStore.ApplicationCore.Interfaces.Services;
 namespace PizaaStore.UI.API.Controllers
@@ -18,6 +19,12 @@ namespace PizaaStore.UI.API.Controllers
         public PizzaOrder Post(PizzaOrder pizzaOrder)
         {
             return _pizzaOrderService.Create(pizzaOrder);
+        }
+
+        [HttpGet("{pizzaOrderId}")]
+        public PizzaOrder Get(int pizzaOrderId)
+        {
+            return _pizzaOrderService.Read(pizzaOrderId);
         }
     }
 }
