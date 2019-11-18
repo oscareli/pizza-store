@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using PizzaStore.ApplicationCore.Entities;
+using PizzaStore.ApplicationCore.Services;
 
 namespace PizzaStore.ApplicationCore.Interfaces.Services
 {
@@ -18,5 +19,7 @@ namespace PizzaStore.ApplicationCore.Interfaces.Services
         void Update(PizzaOrder entity);
 
         void Delete(PizzaOrder entity);
+        
+        PizzaCatalog GetPizzaCatalog();
     }
 }

@@ -18,9 +18,16 @@ namespace PizzaStore.ApplicationCore.Services
             this.pizzaOrderRepository = pizzaOrderRepository;
         }
 
+        public PizzaCatalog GetPizzaCatalog()
+        {
+            return new PizzaCatalog();
+        }
+
 
         public PizzaOrder Create(PizzaOrder entity)
         {
+            // TODO: Make a pizza!
+
             return pizzaOrderRepository.Create(entity);
         }
 

@@ -2,13 +2,6 @@ using System;
 
 namespace PizzaStore.ApplicationCore.Entities
 {
-    public enum PersonalizacaoEnum
-    {
-        ExtraBacon,
-        SemCebola,
-        BordaRecheada
-    }
-
     public class PizzaOrder
     {
         public int PizzaOrderId { get; set; }
