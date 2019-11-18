@@ -11,18 +11,12 @@ namespace PizzaStore.ApplicationCore.Services
         public string Nome { get; set; }
     }
 
-    public class Personalizacao
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-    }
-
     public class PizzaCatalog
     {
         public IList<Tamanho> Tamanhos { get; }
         public IList<string> Sabores { get; }
 
-        public IList<Personalizacao> Personalizacao { get; set; }
+        public IList<string> Personalizacao { get; set; }
 
         public PizzaCatalog()
         {
@@ -39,7 +33,7 @@ namespace PizzaStore.ApplicationCore.Services
                 {
                     Tempo = 20,
                     Valor = 30.00,
-                    Nome = "média"
+                    Nome = "media"
                 },
 
                 new Tamanho()
@@ -55,25 +49,9 @@ namespace PizzaStore.ApplicationCore.Services
                 "calabresa", "marguerita", "portuguesa"
             };
 
-            Personalizacao = new List<Personalizacao>()
+            Personalizacao = new List<string>()
             {
-                new Personalizacao()
-                {
-                    Id = 0,
-                    Nome = "extra bacon"
-                },
-
-                new Personalizacao()
-                {
-                    Id = 1,
-                    Nome = "sem cebola"
-                },
-
-                new Personalizacao()
-                {
-                    Id = 2,
-                    Nome = "borda recheada"
-                }
+                "extra bacon", "sem cebola", "borda recheada"
             };
         }
 

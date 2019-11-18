@@ -26,7 +26,61 @@ namespace PizzaStore.ApplicationCore.Services
 
         public PizzaOrder Create(PizzaOrder entity)
         {
-            // TODO: Make a pizza!
+            IPizza pizza = null;
+
+            if (entity.Sabor == "calabresa")
+            {
+                pizza = new Calabresa();
+            }
+
+            if (entity.Sabor == "marguerita")
+            {
+                pizza = new Marguerita();
+            }
+
+            if (entity.Sabor == "portuguesa")
+            {
+                pizza = new Portuguesa();
+            }
+
+            if (entity.Tamando == "pequena")
+            {
+                pizza = new Pequena(pizza);
+            }
+
+            if (entity.Tamando == "média")
+            {
+                pizza = new Media(pizza);
+            }
+
+            if (entity.Tamando == "grande")
+            {
+                pizza = new Grande(pizza);
+            }
+
+            var personalizacoes = entity.Personalizacao.Split(",");
+
+            foreach (var item in personalizacoes)
+            {
+                if (item == "borda recheada")
+                {
+                    pizza = new BordaRecheada(pizza);
+                }
+
+                if (item == "extra bacon")
+                {
+                    pizza = new ExtraBacon(pizza);
+                }
+
+                if (item == "sem cebola")
+                {
+                    pizza = new SemCebola(pizza);
+                }
+            }
+
+            entity.ValorTotal = pizza.Custo().Valor;
+            entity.TempoDePreparo = pizza.Custo().TempoDePreparo;
+
 
             return pizzaOrderRepository.Create(entity);
         }

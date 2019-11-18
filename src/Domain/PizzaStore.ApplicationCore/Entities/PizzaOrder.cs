@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace PizzaStore.ApplicationCore.Entities
 {
@@ -12,11 +13,11 @@ namespace PizzaStore.ApplicationCore.Entities
 
         public string Tamando { get; set; }
 
-        public PersonalizacaoEnum Personalizacao { get; set; }
+        public string Personalizacao { get; set; }
 
-        public decimal ValorTotal { get; set; }
+        public double ValorTotal { get; set; }
 
-        public DateTime TempoDePreparo { get; set; }
+        public int TempoDePreparo { get; set; }
 
         public PizzaOrder()
         {

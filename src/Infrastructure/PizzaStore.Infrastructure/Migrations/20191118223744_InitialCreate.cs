@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PizzaStore.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,9 +15,9 @@ namespace PizzaStore.Infrastructure.Migrations
                     ClientId = table.Column<int>(nullable: false),
                     Sabor = table.Column<string>(nullable: true),
                     Tamando = table.Column<string>(nullable: true),
-                    Personalizacao = table.Column<int>(nullable: false),
-                    ValorTotal = table.Column<decimal>(nullable: false),
-                    TempoDePreparo = table.Column<DateTime>(nullable: false)
+                    Personalizacao = table.Column<string>(nullable: true),
+                    ValorTotal = table.Column<double>(nullable: false),
+                    TempoDePreparo = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
