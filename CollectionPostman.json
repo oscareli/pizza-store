@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "e57c1aec-96a2-4ce6-8334-05603a01ea9e",
+		"name": "PizzaStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Pizza Catalogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/pizza-catalog",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"pizza-catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Pizza Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ClientId\": 1,\n\t\"Personalizacao\": \"extra bacon, sem cebola\",\n\t\"Sabor\": \"portuguesa\",\n\t\"Tamando\": \"grande\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/pizza-order",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"pizza-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get PizzaOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/pizza-order/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"pizza-order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
